@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  },
+  "scripts": {
+    "start": "dev"
+  },
+  "dependencies": {
+    "cors": "^2.8.6"
+  }
+}
