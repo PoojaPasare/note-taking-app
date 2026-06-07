@@ -37,7 +37,7 @@ function Noteform() {
   return (
     <div className="max-w-xl mx-auto mt-10 bg-gray-800 rounded-2xl shadow-lg p-6">
       <h2 className="text-2xl font-bold text-center text-blue-400 mb-6">
-        Create a New Note
+        Create a New Note..
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
