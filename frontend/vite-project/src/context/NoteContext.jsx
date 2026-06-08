@@ -38,18 +38,33 @@ export const NoteProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // fetch all notes
-  const getNotes = async () => {
-    setLoading(true);
-    try {
-        const response = await BACKEND_URL.get("/get-notes");
-        setNotes(response.data);
+  // const getNotes = async () => {
+  //   setLoading(true);
+  //   try {
+  //       const response = await BACKEND_URL.get("/get-notes");
+  //       setNotes(response.data);
 
-    } catch (error) {
-        console.log("error fetchign notes:",error);
-    }finally{
-        setLoading(false)
-    }
-  };
+  //   } catch (error) {
+  //       console.log("error fetchign notes:",error);
+  //   }finally{
+  //       setLoading(false)
+  //   }
+  // };
+  const getNotes = async () => {
+  setLoading(true);
+  try {
+    const response = await BACKEND_URL.get("/get-notes");
+
+    console.log("response.data =", response.data);
+    console.log("isArray =", Array.isArray(response.data));
+
+    setNotes(response.data);
+  } catch (error) {
+    console.log("error fetching notes:", error);
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(()=>{
     getNotes();
